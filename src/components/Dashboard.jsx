@@ -84,7 +84,7 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               id: "troyhack",
               title: "Winner: TroyHack 2024",
               description: "Secured 1st Position in a high-intensity 24-hour hackathon against 20+ teams.\n\nLed the development of a 3D simulation game using Unity and C# designed to gamify complex educational concepts. Delivered a glitch-free playable demo under extreme time constraints.",
-              images: ["troy-award.jpeg", "troy-team.jpeg"], 
+              images: ["troy-award.jpeg", "troy-team.jpeg", "troy-group.jpeg"], 
               date: "Oct 2024",
               tech: ["Unity", "C#", "Team Leadership"]
           })} 
