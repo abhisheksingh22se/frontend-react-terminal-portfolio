@@ -62,14 +62,14 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
       
       {/* 1. Master's Degree */}
       <AchievementCard 
-          title="Master of Science"
+          title="MS in Computer Science"
           subtitle="Troy University | Cybersecurity"
           description="GPA: 3.5. Thesis on Smart Contract Formal Verification."
           onClick={() => openAchievement({
               id: "ms-grad",
               title: "Master of Science in Computer Science",
               description: "Specialization in Cybersecurity.\n\nResearch Thesis: 'Smart Contract Measurement Methodology'.\n• Developed a structured taxonomy for evaluating smart contract robustness.\n• Integrated Static Analysis (Slither) and Formal Verification (Certora) to quantify security vs. efficiency trade-offs.\n\nServed as Graduate Administrative Assistant, managing university portals and leading AI workshops.",
-              images: ["ms-degree.png", "grad-photo.jpeg"], 
+              gallery: ["ms-degree.png", "grad-photo.jpeg"], 
               date: "Jan 2024 – Jun 2025",
               tech: ["Formal Verification", "Smart Contracts", "Research"]
           })} 
