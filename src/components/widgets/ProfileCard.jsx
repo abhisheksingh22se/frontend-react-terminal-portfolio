@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Github, Linkedin, Mail, ExternalLink, Terminal } from 'lucide-react';
+import { MapPin, Github, Linkedin, Mail, ExternalLink, Terminal, Download } from 'lucide-react';
 
 const ProfileCard = ({ onClick }) => {
   return (
@@ -19,15 +19,15 @@ const ProfileCard = ({ onClick }) => {
         {/* Text Info */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-3xl font-bold text-white mb-1 tracking-tight">Abhishek Singh</h1>
-          <p className="text-green-400 font-mono text-sm mb-4">Cloud & AIOps Engineer | DevSecOps Specialist</p>
+          <p className="text-green-400 font-mono text-sm mb-4">Site Reliability Engineer | Cloud Architect</p>
           
-          {/* MOVED SUMMARY HERE */}
+          {/* Summary */}
           <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-green-500/30 pl-3">
-            Cloud & AIOps Engineer with a Master of Science in Computer Science (Cybersecurity) and a background in Data Science. Specializing in Self-Healing Infrastructure, I combine “Shift-Left” security with event-driven automation to build resilient cloud platforms. Expert in architecting production-grade clusters using Terraform, AWS EKS, and Kubernetes, with a focus on reducing MTTR through automated remediation workflows. Available for contract or remote engagements to architect secure, self-healing cloud ecosystems.
+            SRE specialized in autonomous, self-healing infrastructure with a <strong className="text-gray-200 font-semibold">97% MTTR reduction</strong> (sub-60s) achieved via event-driven AIOps. MS in Computer Science (Cybersecurity focus) and IIIT Bangalore certified in Data Science. Expert in SLO-driven operations, production Kubernetes, and Zero-Trust DevSecOps pipelines. <strong className="text-gray-200 font-semibold">Available for Remote Roles (Singapore / UK / Global)</strong> with strategic IST overlap for SGT (+2.5 hrs) and GMT (+5.5 hrs).
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-500 text-xs font-mono mb-6">
-            <span className="flex items-center gap-1 hover:text-gray-300"><MapPin size={12} /> Delhi, India</span>
+            <span className="flex items-center gap-1 hover:text-gray-300"><MapPin size={12} /> Delhi, India (IST)</span>
             <span className="flex items-center gap-1 hover:text-gray-300"><Mail size={12} /> abhisheksingh22se@gmail.com</span>
           </div>
 
@@ -38,6 +38,9 @@ const ProfileCard = ({ onClick }) => {
             <a href="https://linkedin.com/in/abhisheksingh22sep" className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded hover:bg-blue-900/20 border border-gray-700 hover:border-blue-500/50 transition-all text-xs font-mono group/btn">
               <Linkedin size={14} /> LinkedIn
             </a>
+            <a href="/assets/Abhishek_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 border border-gray-700 hover:border-green-500/50 transition-all text-xs font-mono group/btn">
+              <Download size={14} /> Resume
+            </a>
             <button onClick={onClick} className="flex items-center gap-2 px-4 py-2 bg-green-900/20 text-green-400 border border-green-900 rounded hover:bg-green-500 hover:text-black transition-all text-xs font-mono">
               <ExternalLink size={14} /> view_kernel.sh
             </button>
@@ -45,7 +48,7 @@ const ProfileCard = ({ onClick }) => {
         </div>
       </div>
 
-      {/* NEW: Hacker Tip (Engagement Booster) */}
+      {/* Tip for using the terminal */}
       <div className="mt-4 pt-4 border-t border-gray-800/50 flex items-center justify-center md:justify-start gap-3 text-xs font-mono text-gray-500 animate-in fade-in duration-1000 delay-500">
         <Terminal size={12} className="text-green-500" />
         <span>

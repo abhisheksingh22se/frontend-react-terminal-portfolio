@@ -1,7 +1,6 @@
 import React from 'react';
-// Using stable icons (FontAwesome + Simple Icons) to prevent crashes
 import { 
-  FaAws, FaLinux, FaDocker, FaPython, FaGitAlt, FaJenkins, FaChartLine 
+  FaAws, FaLinux, FaDocker, FaPython, FaGitAlt, FaJenkins, FaChartLine, FaBell, FaShieldAlt
 } from "react-icons/fa";
 import { 
   SiTerraform, SiKubernetes, SiGithubactions, SiSonarqube, SiSnyk, 
@@ -12,15 +11,28 @@ import {
 const TechStack = () => {
   const categories = [
     {
-      id: "infra",
-      label: "Infrastructure & Cloud",
+      id: "observability",
+      label: "Reliability & Observability",
+      groupColor: "text-purple-400",
+      items: [
+        { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
+        { name: "Grafana", icon: SiGrafana, color: "text-[#F46800]" },
+        { name: "CloudWatch Anomaly", icon: FaChartLine, color: "text-[#FF9900]" },
+        { name: "AlertManager", icon: FaBell, color: "text-[#E6522C]" },
+        { name: "AWS EventBridge", icon: FaAws, color: "text-[#FF9900]" }
+      ]
+    },
+    {
+      id: "iac",
+      label: "Infrastructure as Code",
       groupColor: "text-blue-400",
       items: [
-        { name: "AWS (EKS, VPC, IAM, S3)", icon: FaAws, color: "text-[#FF9900]" },
         { name: "Terraform", icon: SiTerraform, color: "text-[#7B42BC]" },
-        { name: "Linux", icon: FaLinux, color: "text-[#FCC624]" },
+        { name: "AWS (EKS, VPC, IAM)", icon: FaAws, color: "text-[#FF9900]" },
+        { name: "Kubernetes", icon: SiKubernetes, color: "text-[#326CE5]" },
         { name: "Docker", icon: FaDocker, color: "text-[#2496ED]" },
-        { name: "Kubernetes", icon: SiKubernetes, color: "text-[#326CE5]" }
+        { name: "Helm", icon: SiHelm, color: "text-[#0F1689]" },
+        { name: "Linux Admin", icon: FaLinux, color: "text-[#FCC624]" }
       ]
     },
     {
@@ -28,39 +40,23 @@ const TechStack = () => {
       label: "DevSecOps & CI/CD",
       groupColor: "text-green-400",
       items: [
-        { name: "Git", icon: FaGitAlt, color: "text-[#F05032]" },
         { name: "GitHub Actions", icon: SiGithubactions, color: "text-white" },
-        { name: "Jenkins", icon: FaJenkins, color: "text-[#D24939]" },
-        { name: "SonarQube", icon: SiSonarqube, color: "text-[#4E9BCD]" },
-        { name: "Trivy", icon: FaChartLine, color: "text-blue-300" }, 
         { name: "Snyk", icon: SiSnyk, color: "text-[#4C4A73]" },
-        { name: "OIDC", icon: SiOpenid, color: "text-[#F78C40]" },
-        { name: "Helm", icon: SiHelm, color: "text-[#0F1689]" },
-        { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
-        { name: "Grafana", icon: SiGrafana, color: "text-[#F46800]" }
+        { name: "Trivy (Zero-Trust)", icon: FaShieldAlt, color: "text-blue-300" },
+        { name: "OIDC Federation", icon: SiOpenid, color: "text-[#F78C40]" },
+        { name: "SonarQube", icon: SiSonarqube, color: "text-[#4E9BCD]" },
+        { name: "Git", icon: FaGitAlt, color: "text-[#F05032]" }
       ]
     },
     {
-      id: "aiops",
-      label: "AIOps & Automation",
-      groupColor: "text-purple-400",
-      items: [
-        { name: "CloudWatch Anomaly", icon: FaChartLine, color: "text-[#FF9900]" },
-        { name: "AWS Lambda", icon: FaAws, color: "text-[#FF9900]" },
-        { name: "Systems Manager", icon: FaAws, color: "text-gray-400" },
-        { name: "Python", icon: FaPython, color: "text-[#3776AB]" },
-        { name: "Bash Scripting", icon: SiGnubash, color: "text-gray-300" }
-      ]
-    },
-    {
-      id: "data",
-      label: "Data Science",
+      id: "automation",
+      label: "Automation & Data",
       groupColor: "text-yellow-400",
       items: [
+        { name: "Python / Boto3", icon: FaPython, color: "text-[#3776AB]" },
+        { name: "Bash Scripting", icon: SiGnubash, color: "text-gray-300" },
         { name: "Pandas", icon: SiPandas, color: "text-[#150458]" },
-        { name: "Scikit-Learn", icon: SiScikitlearn, color: "text-[#F7931E]" },
-        { name: "Jupyter", icon: SiJupyter, color: "text-[#F37626]" },
-        { name: "Stat Analysis (IIITB)", icon: FaChartLine, color: "text-yellow-500" }
+        { name: "Scikit-Learn", icon: SiScikitlearn, color: "text-[#F7931E]" }
       ]
     }
   ];
@@ -85,7 +81,7 @@ const TechStack = () => {
               {cat.label}
             </h4>
 
-            {/* Tools Container - Changed from GRID to FLEX-WRAP for variable widths */}
+            {/* Tools Container */}
             <div className="flex flex-wrap gap-2">
               {cat.items.map((tool, idx) => (
                 <div 
@@ -95,7 +91,6 @@ const TechStack = () => {
                   <div className="p-1 bg-black/30 rounded shrink-0">
                     <tool.icon size={14} className={`${tool.color} group-hover:scale-110 transition-transform`} />
                   </div>
-                  {/* 'whitespace-nowrap' keeps text on one line, but flex lets container grow */}
                   <span className="text-[10px] text-gray-400 group-hover:text-gray-200 font-medium whitespace-nowrap">
                     {tool.name}
                   </span>

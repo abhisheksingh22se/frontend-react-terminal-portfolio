@@ -60,18 +60,18 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
   const renderAwardsGrid = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
       
-      {/* 1. Master's Degree */}
+      {/* 1. Master's Degree (SRE/Security Aligned) */}
       <AchievementCard 
           title="MS in Computer Science"
           subtitle="Troy University | Cybersecurity"
-          description="GPA: 3.5. Thesis on Smart Contract Formal Verification."
+          description="GPA: 3.5. Thesis on Smart Contract Formal Verification & Static Analysis."
           onClick={() => openAchievement({
               id: "ms-grad",
               title: "Master of Science in Computer Science",
-              description: "Specialization in Cybersecurity.\n\nResearch Thesis: 'Smart Contract Measurement Methodology'.\n• Developed a structured taxonomy for evaluating smart contract robustness.\n• Integrated Static Analysis (Slither) and Formal Verification (Certora) to quantify security vs. efficiency trade-offs.\n\nServed as Graduate Administrative Assistant, managing university portals and leading AI workshops.",
-              gallery: ["ms-degree.png", "grad-photo.jpeg"], 
+              description: "Specialization in Cybersecurity.\n\nResearch Thesis: 'Smart Contract Measurement Methodology'.\n• Integrated Static Analysis (Slither) and Formal Verification (Certora) to quantify security vs. efficiency trade-offs.\n• Developed a structured taxonomy for evaluating code robustness in production environments.\n\nServed as Graduate Administrative Assistant, maintaining 100% data integrity for university portals and mentoring students in secure programming.",
+              images: ["ms-degree.png", "grad-photo.jpeg"], 
               date: "Jan 2024 – Jun 2025",
-              tech: ["Formal Verification", "Smart Contracts", "Research"]
+              tech: ["DevSecOps", "Static Analysis", "Security"]
           })} 
       />
 
@@ -86,7 +86,7 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               description: "Secured 1st Position in a high-intensity 24-hour hackathon against 20+ teams.\n\nLed the development of a 3D simulation game using Unity and C# designed to gamify complex educational concepts. Delivered a glitch-free playable demo under extreme time constraints.",
               images: ["troy-award.jpeg", "troy-team.jpeg", "troy-group.jpeg"], 
               date: "Oct 2024",
-              tech: ["Unity", "C#", "Team Leadership"]
+              tech: ["Rapid Prototyping", "C#", "Team Leadership"]
           })} 
       />
 
@@ -94,14 +94,14 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
       <AchievementCard 
           title="Adv. Cert. Data Science"
           subtitle="IIIT Bangalore | GPA: 3.7/4.0"
-          description="Focus on Machine Learning, Predictive Analytics, and Python."
+          description="Focus on Machine Learning, Predictive Analytics, and Python automation."
           onClick={() => openAchievement({
               id: "iiit-ds",
               title: "Advanced Certification in Data Science",
-              description: "Rigorous 9-month program focused on the mathematics of Machine Learning and Data Engineering.\n• Mastered Predictive Analytics and Python data stack (Pandas, NumPy, Scikit-Learn).\n• Capstone: Analyzed large-scale datasets to predict financial market trends.",
+              description: "Rigorous 9-month program focused on the mathematics of Machine Learning and Data Engineering.\n• Mastered Predictive Analytics and the Python data stack (Pandas, NumPy, Scikit-Learn).\n• Capstone: Analyzed large-scale datasets to predict financial market trends.",
               images: ["iiit-cert.png"], 
               date: "Mar 2023 – Nov 2023",
-              tech: ["Python", "Machine Learning", "Data Analytics"]
+              tech: ["Python", "Data Engineering", "Analytics"]
           })} 
       />
 
@@ -116,7 +116,7 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               description: "A one-year intensive program that transitioned my focus from hardware electronics to software engineering.\n• Covered core CS fundamentals: Data Structures, Database Management, and Object-Oriented Programming.",
               images: ["pgdca-cert.png"], 
               date: "Jan 2022 – Dec 2022",
-              tech: ["Computer Fundamentals", "DBMS", "OOPs"]
+              tech: ["CS Fundamentals", "DBMS", "OOPs"]
           })} 
       />
 
@@ -131,7 +131,7 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               description: "Graduated with a focus on Embedded Systems and IoT.\n\nCapstone Project: Greenhouse Control & Management System.\n• Engineered an automated environmental control system using PIC Microcontrollers and a sensor network to optimize temperature and humidity in real-time.",
               images: ["bsc-degree.png"], 
               date: "Jun 2018 – Sep 2021",
-              tech: ["IoT", "Embedded Systems", "Microcontrollers"]
+              tech: ["IoT", "Embedded Systems", "Hardware"]
           })} 
       />
 
@@ -144,7 +144,6 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               id: "math-olympiad",
               title: "International Olympiad of Mathematics",
               description: "Demonstrated exceptional problem-solving and logical reasoning skills early in academic career.\n\n• Achieved State Rank 5 (Chhattisgarh) in 2017.\n• Secured All India Rank 362 out of thousands of participants.\n• Awarded School Topper (Rank 1) in 2016.",
-              
               date: "2016 - 2017",
               tech: ["Mathematics", "Logic", "Problem Solving"]
           })} 
@@ -213,8 +212,10 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
                     </div>
                     <span className={`text-[10px] font-mono px-2 py-1 rounded border ${
                       project.status === 'Production' || project.status === 'Deployed' 
-                      ? 'bg-green-900/20 text-green-400 border-green-900' 
-                      : 'bg-yellow-900/20 text-yellow-400 border-yellow-900'
+                      ? 'bg-green-900/20 text-green-400 border-green-900/50' 
+                      : project.status === 'AIOps'
+                      ? 'bg-purple-900/20 text-purple-400 border-purple-900/50'
+                      : 'bg-yellow-900/20 text-yellow-400 border-yellow-900/50'
                     }`}>
                       {project.status.toUpperCase()}
                     </span>

@@ -2,25 +2,33 @@ import React, { useEffect, useRef } from 'react';
 import { ScrollText, Activity } from 'lucide-react';
 
 const logs = [
-  { time: "2026-02-03", type: "INFO", msg: "LISTENING on port 443... (Open to Work)" },
-  { time: "2026-01-20", type: "UPDATE", msg: "Self-Healing-EKS: Optimization complete. MTTR < 60s." },
+  // --- NEW: 2026 SRE Sprint Logs ---
+  { time: "2026-05-09", type: "INFO", msg: "Defining SLIs/SLOs for multi-region EKS clusters." },
+  { time: "2026-04-28", type: "DEBUG", msg: "Chaos Testing initialized. Validated 99.98% availability under simulated node failure." },
+  { time: "2026-03-15", type: "UPDATE", msg: "Shift-Left CI/CD integration complete. Critical CVE block rate: 100%." },
+  { time: "2026-02-03", type: "INFO", msg: "LISTENING on port 443... (SRE Global Remote: SGT/GMT availability)" },
+  { time: "2026-01-20", type: "SUCCESS", msg: "Self-Healing-EKS: Optimization complete. MTTR < 60s." },
+  { time: "2026-01-05", type: "WARN", msg: "High CPU usage (>90%) trigger fired -> Auto-remediation lambda invoked successfully." },
   { time: "2025-06-01", type: "SUCCESS", msg: "Install Complete: Master_of_Science.pkg (Troy Univ)" },
   { time: "2025-04-15", type: "INFO", msg: "Running process: Thesis_Defense.sh --verbose" },
-  { time: "2025-01-10", type: "WARN", msg: "High CPU usage detected: Developing DevSecOps Pipeline..." },
-  { time: "2024-08-20", type: "DEBUG", msg: "Auditing Smart Contracts with Slither & Mythril." },
+  { time: "2024-08-20", type: "DEBUG", msg: "Auditing Smart Contracts with Static Analysis & Formal Verification." },
   { time: "2024-05-01", type: "INFO", msg: "Role assigned: Graduate_Admin_Assistant [Sudo Access Granted]" },
   { time: "2024-02-15", type: "CRITICAL", msg: "TroyHack_Event detected -> Outcome: VICTORY (1st Place)" },
   { time: "2023-11-20", type: "SUCCESS", msg: "Patch applied: Data_Science_Advanced (IIIT Bangalore)" },
   { time: "2023-06-12", type: "WARN", msg: "Caffeine_Level critical. Refilling..." },
   { time: "2022-12-01", type: "UPDATE", msg: "Hardware_Mode disabled. Software_Mode enabled (PGDCA)." },
-  { time: "2022-01-15", type: "INFO", msg: "Bridging Legacy Systems: Electronics -> Computer Science" },
-  { time: "2021-09-01", type: "LEGACY", msg: "Archived module: Bachelor_Science (Electronics)" },
   { time: "2018-07-01", type: "INIT", msg: "System Boot sequence initiated. Hello World." }
 ];
 
 const ActivityLog = () => {
   // Auto-scroll to top (most recent) on load
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, []);
 
   return (
     <div className="bg-black/40 border border-gray-800 p-4 rounded-lg font-mono text-xs h-full flex flex-col relative overflow-hidden">

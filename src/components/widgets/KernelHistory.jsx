@@ -1,13 +1,23 @@
 import React from 'react';
-import { CheckCircle, Circle, GitCommit, Terminal, Cpu, Zap, Trophy, Shield } from 'lucide-react';
+import { CheckCircle, Circle, GitCommit, Terminal, Cpu, Zap, Trophy, Shield, Activity } from 'lucide-react';
 
 const KernelHistory = () => {
   const timeline = [
     {
+      year: "2026",
+      title: "SRE Focus & AIOps Architecture",
+      org: "Independent Projects",
+      details: "Architected self-healing EKS clusters. Defined SLIs/SLOs and integrated Chaos testing to achieve 97% MTTR reduction.",
+      status: "ACTIVE_PROCESS",
+      icon: Activity,
+      color: "text-purple-400",
+      borderColor: "border-purple-500"
+    },
+    {
       year: "2025",
       title: "MS in Computer Science Completed",
       org: "Troy University",
-      details: "Successfully defended thesis on Smart Contract Security. Graduated with 3.5 GPA.",
+      details: "Successfully defended thesis on Smart Contract Security utilizing Static Analysis and Formal Verification. Graduated with 3.5 GPA.",
       status: "SUCCESS",
       icon: Shield,
       color: "text-green-400",
@@ -40,8 +50,8 @@ const KernelHistory = () => {
       details: "Mastered the mathematics of ML/AI. Built predictive models using Python.",
       status: "INSTALLED",
       icon: Cpu,
-      color: "text-purple-400",
-      borderColor: "border-purple-500"
+      color: "text-pink-400",
+      borderColor: "border-pink-500"
     },
     {
       year: "2022",
@@ -66,10 +76,9 @@ const KernelHistory = () => {
   ];
 
   return (
-    // FIX: Used 'flex flex-col' and 'overflow-hidden' on parent to contain scrolling
     <div className="bg-black/80 border border-gray-800 rounded-lg font-mono text-sm text-gray-300 shadow-2xl h-full flex flex-col overflow-hidden">
       
-      {/* 1. HEADER (Fixed, Non-scrolling) */}
+      {/* 1. HEADER */}
       <div className="p-6 pb-2 shrink-0 border-b border-gray-800 bg-black/90 z-20">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -86,7 +95,7 @@ const KernelHistory = () => {
       <div className="flex-1 overflow-y-auto p-6 pt-4 scrollbar-thin scrollbar-thumb-gray-800 relative">
         
         {/* The Vertical Line */}
-        <div className="absolute left-[43px] top-4 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-gray-800 to-transparent pointer-events-none" />
+        <div className="absolute left-[43px] top-4 bottom-0 w-px bg-gradient-to-b from-purple-500/50 via-gray-800 to-transparent pointer-events-none" />
 
         {timeline.map((item, index) => (
           <div key={index} className="relative flex gap-6 mb-8 group animate-in slide-in-from-left-2 duration-500" style={{ animationDelay: `${index * 100}ms` }}>
@@ -102,7 +111,7 @@ const KernelHistory = () => {
                 <span className={`font-bold text-base ${item.color} group-hover:translate-x-1 transition-transform`}>
                   {item.title}
                 </span>
-                <span className="text-[10px] font-bold font-mono text-gray-500 bg-gray-900 border border-gray-700 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] font-bold font-mono text-gray-500 bg-gray-900 border border-gray-700 px-1.5 py-0.5 rounded mt-1 md:mt-0 w-fit">
                   {item.year}
                 </span>
               </div>
