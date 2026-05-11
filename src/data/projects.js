@@ -29,7 +29,7 @@ export const projects = [
     tech: ["GitHub Actions", "Trivy", "Snyk", "Docker", "OIDC"],
     status: "Finalizing", 
     icon: Shield,
-    github: "https://github.com/abhisheksingh22se/devsecops-ci-cd-pipeline.git"
+    github: "https://github.com/abhisheksingh22se/devsecops-cicd-pipeline.git"
   },
   {
     id: "fastapi-mongo-service",
