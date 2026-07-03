@@ -19,11 +19,11 @@ const ProfileCard = ({ onClick }) => {
         {/* Text Info */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-3xl font-bold text-white mb-1 tracking-tight">Abhishek Singh</h1>
-          <p className="text-green-400 font-mono text-sm mb-4">Site Reliability Engineer | Cloud Architect</p>
+          <p className="text-green-400 font-mono text-sm mb-4">DevSecOps Engineer & SRE | Cloud & Web3 Security</p>
           
           {/* Summary */}
           <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-green-500/30 pl-3">
-            SRE specialized in autonomous, self-healing infrastructure with a <strong className="text-gray-200 font-semibold">97% MTTR reduction</strong> (sub-60s) achieved via event-driven AIOps. MS in Computer Science (Cybersecurity focus) and IIIT Bangalore certified in Data Science. Expert in SLO-driven operations, production Kubernetes, and Zero-Trust DevSecOps pipelines. <strong className="text-gray-200 font-semibold">Available for Remote Roles (Singapore / UK / Global)</strong> with strategic IST overlap for SGT (+2.5 hrs) and GMT (+5.5 hrs).
+            Cloud & DevSecOps Engineer specializing in autonomous, self-healing infrastructure and Web3 security. Architecting zero-trust cloud environments utilizing GitOps deployment strategies, shift-left security quality gates, and event-driven observability. Achieved a <strong className="text-gray-200 font-semibold">97% MTTR reduction</strong> (sub-60s) via AIOps on AWS EKS. <strong className="text-gray-200 font-semibold">Available for Remote Roles (Singapore / UK / Global)</strong> with strategic IST/SGT alignment.
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-500 text-xs font-mono mb-6">

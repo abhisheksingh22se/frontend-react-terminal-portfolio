@@ -11,15 +11,15 @@ import {
 const TechStack = () => {
   const categories = [
     {
-      id: "observability",
-      label: "Reliability & Observability",
-      groupColor: "text-purple-400",
+      id: "devsecops",
+      label: "DevSecOps & CI/CD",
+      groupColor: "text-green-400",
       items: [
-        { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
-        { name: "Grafana", icon: SiGrafana, color: "text-[#F46800]" },
-        { name: "CloudWatch Anomaly", icon: FaChartLine, color: "text-[#FF9900]" },
-        { name: "AlertManager", icon: FaBell, color: "text-[#E6522C]" },
-        { name: "AWS EventBridge", icon: FaAws, color: "text-[#FF9900]" }
+        { name: "GitHub Actions", icon: SiGithubactions, color: "text-white" },
+        { name: "Snyk", icon: SiSnyk, color: "text-[#4C4A73]" },
+        { name: "Trivy", icon: FaShieldAlt, color: "text-blue-300" },
+        { name: "OIDC Federation", icon: SiOpenid, color: "text-[#F78C40]" },
+        { name: "SonarQube", icon: SiSonarqube, color: "text-[#4E9BCD]" }
       ]
     },
     {
@@ -31,21 +31,17 @@ const TechStack = () => {
         { name: "AWS (EKS, VPC, IAM)", icon: FaAws, color: "text-[#FF9900]" },
         { name: "Kubernetes", icon: SiKubernetes, color: "text-[#326CE5]" },
         { name: "Docker", icon: FaDocker, color: "text-[#2496ED]" },
-        { name: "Helm", icon: SiHelm, color: "text-[#0F1689]" },
-        { name: "Linux Admin", icon: FaLinux, color: "text-[#FCC624]" }
+        { name: "ArgoCD", icon: SiHelm, color: "text-[#F4A03A]" } // Reusing Helm icon or import SiArgocd if available
       ]
     },
     {
-      id: "devsecops",
-      label: "DevSecOps & CI/CD",
-      groupColor: "text-green-400",
+      id: "observability",
+      label: "Reliability & Observability",
+      groupColor: "text-purple-400",
       items: [
-        { name: "GitHub Actions", icon: SiGithubactions, color: "text-white" },
-        { name: "Snyk", icon: SiSnyk, color: "text-[#4C4A73]" },
-        { name: "Trivy (Zero-Trust)", icon: FaShieldAlt, color: "text-blue-300" },
-        { name: "OIDC Federation", icon: SiOpenid, color: "text-[#F78C40]" },
-        { name: "SonarQube", icon: SiSonarqube, color: "text-[#4E9BCD]" },
-        { name: "Git", icon: FaGitAlt, color: "text-[#F05032]" }
+        { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
+        { name: "Grafana", icon: SiGrafana, color: "text-[#F46800]" },
+        { name: "CloudWatch Anomaly", icon: FaChartLine, color: "text-[#FF9900]" }
       ]
     },
     {
@@ -55,8 +51,7 @@ const TechStack = () => {
       items: [
         { name: "Python / Boto3", icon: FaPython, color: "text-[#3776AB]" },
         { name: "Bash Scripting", icon: SiGnubash, color: "text-gray-300" },
-        { name: "Pandas", icon: SiPandas, color: "text-[#150458]" },
-        { name: "Scikit-Learn", icon: SiScikitlearn, color: "text-[#F7931E]" }
+        { name: "Pandas", icon: SiPandas, color: "text-[#150458]" }
       ]
     }
   ];

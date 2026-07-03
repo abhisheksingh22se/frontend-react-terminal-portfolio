@@ -2,20 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { ScrollText, Activity } from 'lucide-react';
 
 const logs = [
-  // --- NEW: 2026 SRE Sprint Logs ---
-  { time: "2026-05-09", type: "INFO", msg: "Defining SLIs/SLOs for multi-region EKS clusters." },
-  { time: "2026-04-28", type: "DEBUG", msg: "Chaos Testing initialized. Validated 99.98% availability under simulated node failure." },
-  { time: "2026-03-15", type: "UPDATE", msg: "Shift-Left CI/CD integration complete. Critical CVE block rate: 100%." },
-  { time: "2026-02-03", type: "INFO", msg: "LISTENING on port 443... (SRE Global Remote: SGT/GMT availability)" },
-  { time: "2026-01-20", type: "SUCCESS", msg: "Self-Healing-EKS: Optimization complete. MTTR < 60s." },
-  { time: "2026-01-05", type: "WARN", msg: "High CPU usage (>90%) trigger fired -> Auto-remediation lambda invoked successfully." },
-  { time: "2025-06-01", type: "SUCCESS", msg: "Install Complete: Master_of_Science.pkg (Troy Univ)" },
-  { time: "2025-04-15", type: "INFO", msg: "Running process: Thesis_Defense.sh --verbose" },
-  { time: "2024-08-20", type: "DEBUG", msg: "Auditing Smart Contracts with Static Analysis & Formal Verification." },
-  { time: "2024-05-01", type: "INFO", msg: "Role assigned: Graduate_Admin_Assistant [Sudo Access Granted]" },
-  { time: "2024-02-15", type: "CRITICAL", msg: "TroyHack_Event detected -> Outcome: VICTORY (1st Place)" },
-  { time: "2023-11-20", type: "SUCCESS", msg: "Patch applied: Data_Science_Advanced (IIIT Bangalore)" },
-  { time: "2023-06-12", type: "WARN", msg: "Caffeine_Level critical. Refilling..." },
+  { time: "2026-05-15", type: "SUCCESS", msg: "GitOps CI/CD deployed. Critical CVE block rate verified at 100%." },
+  { time: "2026-04-28", type: "DEBUG", msg: "Chaos Testing initialized. Validated 99.98% EKS availability under simulated node failure." },
+  { time: "2026-03-10", type: "INFO", msg: "LISTENING on port 443... (SRE Global Remote: IST/SGT alignment)" },
+  { time: "2026-01-20", type: "SUCCESS", msg: "Self-Healing-EKS Optimization complete. MTTR reduced to < 60s." },
+  { time: "2025-06-01", type: "SUCCESS", msg: "Degree Granted: Master of Science in Computer Science (Cybersecurity)." },
+  { time: "2025-05-15", type: "INFO", msg: "Leadership Role Assigned: President, Indian Student Association (ISA)." },
+  { time: "2025-04-10", type: "INFO", msg: "Defended Thesis: Smart Contract Vulnerability Scoring Framework." },
+  { time: "2024-10-20", type: "CRITICAL", msg: "TroyHack_Event detected -> Outcome: VICTORY (1st Place for 3D Simulation)." },
+  { time: "2024-05-01", type: "INFO", msg: "Role assigned: Graduate Admin Assistant [DB Admin Access Granted]." },
+  { time: "2023-11-20", type: "SUCCESS", msg: "Patch applied: Advanced Data Science Certification (IIIT Bangalore)." },
   { time: "2022-12-01", type: "UPDATE", msg: "Hardware_Mode disabled. Software_Mode enabled (PGDCA)." },
   { time: "2018-07-01", type: "INIT", msg: "System Boot sequence initiated. Hello World." }
 ];

@@ -56,41 +56,56 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
     </div>
   );
 
-  // --- HELPER: Awards Grid (Used in Dashboard & Awards View) ---
+ // --- HELPER: Awards Grid (Used in Dashboard & Awards View) ---
   const renderAwardsGrid = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
       
-      {/* 1. Master's Degree (SRE/Security Aligned) */}
+      {/* 1. Master's Degree */}
       <AchievementCard 
           title="MS in Computer Science"
           subtitle="Troy University | Cybersecurity"
-          description="GPA: 3.5. Thesis on Smart Contract Formal Verification & Static Analysis."
+          description="Thesis: Smart Contract Vulnerability Scoring Framework."
           onClick={() => openAchievement({
               id: "ms-grad",
               title: "Master of Science in Computer Science",
-              description: "Specialization in Cybersecurity.\n\nResearch Thesis: 'Smart Contract Measurement Methodology'.\n• Integrated Static Analysis (Slither) and Formal Verification (Certora) to quantify security vs. efficiency trade-offs.\n• Developed a structured taxonomy for evaluating code robustness in production environments.\n\nServed as Graduate Administrative Assistant, maintaining 100% data integrity for university portals and mentoring students in secure programming.",
+              description: "Specialization in Cybersecurity.\n\nResearch Thesis: 'Smart Contract Vulnerability Scoring Framework'.\n• Extracted foundational security KPIs to develop a mathematical model that evaluates and quantifies code vulnerabilities.\n\nServed as Graduate Administrative Assistant, bridging the gap between technical mentorship and operational leadership by administering digital infrastructure while driving university-wide technical upskilling.",
               images: ["ms-degree.png", "grad-photo.jpeg"], 
               date: "Jan 2024 – Jun 2025",
-              tech: ["DevSecOps", "Static Analysis", "Security"]
+              tech: ["Cybersecurity", "Technical Leadership", "Database Admin"]
           })} 
       />
 
-      {/* 2. TroyHack Winner */}
+      {/* 2. ISA President */}
+      <AchievementCard 
+          title="President, ISA"
+          subtitle="Troy University Executive Board"
+          description="Primary liaison advocating for community integration at Troy City Town Hall."
+          onClick={() => openAchievement({
+              id: "isa-president",
+              title: "President, Indian Student Association",
+              description: "Executive Leadership & Stakeholder Management.\n\n• Led a cross-functional executive board to manage organizational budgets, logistics, and operational execution for large-scale university events and cultural programs.\n• Acted as the primary liaison between the university's international student body and local government, advocating for community integration initiatives directly to the Mayor at the annual Troy City Town Hall.",
+              images: [], 
+              date: "May 2024 – Jun 2025",
+              tech: ["Stakeholder Management", "Cross-Functional Leadership", "Budgeting"]
+          })} 
+      />
+
+      {/* 3. TroyHack Winner */}
       <AchievementCard 
           title="Winner: TroyHack 2024"
-          subtitle="1st Position - 3D Simulation"
-          description="Led a team to victory in a 24-hour hackathon against 20+ teams."
+          subtitle="1st Place - 24-Hour Hackathon"
+          description="Collaborated within a 4-person team to rapid-prototype an educational 3D game."
           onClick={() => openAchievement({
               id: "troyhack",
               title: "Winner: TroyHack 2024",
-              description: "Secured 1st Position in a high-intensity 24-hour hackathon against 20+ teams.\n\nLed the development of a 3D simulation game using Unity and C# designed to gamify complex educational concepts. Delivered a glitch-free playable demo under extreme time constraints.",
+              description: "Secured 1st Position in a high-intensity 24-hour hackathon against 20+ teams.\n\nCollaborated within a 4-person team to rapid-prototype an educational 3D simulation game using Unity and C# designed to gamify complex concepts. Delivered a glitch-free playable demo under extreme time pressure, demonstrating strong incident-command style teamwork.",
               images: ["troy-award.jpeg", "troy-team.jpeg", "troy-group.jpeg"], 
               date: "Oct 2024",
-              tech: ["Rapid Prototyping", "C#", "Team Leadership"]
+              tech: ["Rapid Prototyping", "C#", "Team Collaboration"]
           })} 
       />
 
-      {/* 3. IIIT Bangalore */}
+      {/* 4. IIIT Bangalore */}
       <AchievementCard 
           title="Adv. Cert. Data Science"
           subtitle="IIIT Bangalore | GPA: 3.7/4.0"
@@ -102,21 +117,6 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
               images: ["iiit-cert.png"], 
               date: "Mar 2023 – Nov 2023",
               tech: ["Python", "Data Engineering", "Analytics"]
-          })} 
-      />
-
-      {/* 4. PGDCA */}
-      <AchievementCard 
-          title="PGDCA"
-          subtitle="CV Raman University"
-          description="Post Graduate Diploma. Bridged gap between Electronics & CS."
-          onClick={() => openAchievement({
-              id: "pgdca",
-              title: "Post Graduate Diploma in Computer Applications",
-              description: "A one-year intensive program that transitioned my focus from hardware electronics to software engineering.\n• Covered core CS fundamentals: Data Structures, Database Management, and Object-Oriented Programming.",
-              images: ["pgdca-cert.png"], 
-              date: "Jan 2022 – Dec 2022",
-              tech: ["CS Fundamentals", "DBMS", "OOPs"]
           })} 
       />
 
@@ -135,7 +135,7 @@ const Dashboard = ({ activeView, onNavigate, onModalChange }) => {
           })} 
       />
 
-      {/* 6. Math Olympiad (Text Only Strategy) */}
+      {/* 6. Math Olympiad */}
       <AchievementCard 
           title="Math Olympiad Winner"
           subtitle="State Rank: 5th | National Rank: 362"

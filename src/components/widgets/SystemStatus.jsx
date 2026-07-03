@@ -3,51 +3,48 @@ import { Activity, CheckCircle, Clock, Loader2, ShieldCheck, GitCommit } from 'l
 
 const SystemStatus = () => {
   const workloads = [
-    // --- Active AIOps ---
     { 
-      name: "Self-Healing EKS Engine", 
+      name: "Event-Driven AIOps Engine", 
       stage: "AIOps", 
       status: "MTTR: < 60s", 
-      progress: 97, // Representing the 97% reduction
+      progress: 97, 
       color: "bg-purple-500"
     },
-    // --- Active Development ---
     { 
-      name: "DevSecOps Pipeline", 
-      stage: "Security", 
-      status: "Finalizing",
-      progress: 90, // In finishing stage
-      color: "bg-yellow-500"
-    },
-    // --- Stable Deployments ---
-    { 
-      name: "Infra EKS Provisioner", 
+      name: "GitOps CI/CD Infrastructure", 
       stage: "Production", 
-      status: "Operational",
+      status: "100% Block Rate",
       progress: 100, 
       color: "bg-green-500"
     },
     { 
-      name: "Scalable Data API", 
-      stage: "Production", 
-      status: "Operational",
-      progress: 100, 
-      color: "bg-green-500"
-    },
-    { 
-      name: "Portfolio Console", 
+      name: "Smart Score CLI Action", 
       stage: "Production", 
       status: "Deployed",
       progress: 100, 
       color: "bg-green-500"
     },
+    { 
+      name: "Infrastructure EKS Provisioner", 
+      stage: "Production", 
+      status: "Operational",
+      progress: 100, 
+      color: "bg-green-500"
+    },
+    { 
+      name: "High-Throughput FastAPI", 
+      stage: "Production", 
+      status: "Operational",
+      progress: 100, 
+      color: "bg-green-500"
+    }
   ];
 
-  // Security & Compliance Audits
+  // Security & Compliance Audits (All Passed Now!)
   const audits = [
-    { name: "Zero-Trust Network Isolation", status: "Verified", detail: "Passed" },
+    { name: "Zero-Trust Network (IRSA)", status: "Verified", detail: "Passed" },
     { name: "Automated Incident Response", status: "Verified", detail: "Passed" },
-    { name: "Shift-Left Vulnerability Gating", status: "In Progress", detail: "Pending" },
+    { name: "Shift-Left Vulnerability Gating", status: "Verified", detail: "Passed" },
   ];
 
   return (
