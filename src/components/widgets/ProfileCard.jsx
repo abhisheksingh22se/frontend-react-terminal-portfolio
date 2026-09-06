@@ -27,7 +27,7 @@ const ProfileCard = ({ onClick }) => {
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-500 text-xs font-mono mb-6">
-            <span className="flex items-center gap-1 hover:text-gray-300"><MapPin size={12} /> Delhi, India (IST)</span>
+            <span className="flex items-center gap-1 hover:text-gray-300"><MapPin size={12} /> India</span>
             <span className="flex items-center gap-1 hover:text-gray-300"><Mail size={12} /> abhisheksingh22se@gmail.com</span>
           </div>
 
