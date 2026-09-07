@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Terminal } from 'lucide-react';
 
+
 const BootSequence = ({ onComplete }) => {
   const [lines, setLines] = useState([]);
   
